@@ -1,0 +1,17 @@
+{
+  "name": "site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^13.4.8"
+  },
+  "devDependencies": {
+    "@types/node": "20.3.3"
+  }
+}
