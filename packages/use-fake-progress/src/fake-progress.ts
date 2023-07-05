@@ -21,9 +21,8 @@ export class FakeProgress {
 
   private listeners: Map<ListenerType, Set<() => void>> = new Map();
 
-  constructor(private readonly steps: number[]) {
-    this.total = sum(steps);
-    this.max = this.total - this.timeout;
+  constructor(private steps: number[]) {
+    this.reset(steps);
   }
 
   private getTotal() {
@@ -128,7 +127,10 @@ export class FakeProgress {
     this.quickFinish();
   }
 
-  public reset() {
+  public reset(steps: number[]) {
+    this.steps = steps;
+    this.total = sum(steps);
+    this.max = this.total - this.timeout;
     this.running = false;
     window.clearTimeout(this.quickFinishId);
     window.clearTimeout(this.runId);

@@ -33,7 +33,7 @@ export function useFakeProgress(steps: number[], onFinish?: () => void) {
   return [
     state,
     {
-      reset: usePersistCallback(() => fakeProgress.reset()),
+      reset: usePersistCallback(() => fakeProgress.reset(steps)),
       start: usePersistCallback(() => fakeProgress.start()),
       finish: usePersistCallback(() => fakeProgress.finish()),
     },
