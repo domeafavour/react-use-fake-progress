@@ -3,9 +3,11 @@
 import { Progress } from '@/components/Progress';
 import { useFakeProgress } from 'use-fake-progress';
 
+const steps = [2000, 3000, 2500, 3500];
+
 export default function Home() {
   const [{ progress, step }, { reset, start, finish }] = useFakeProgress(
-    [2000, 3000, 2500, 3500],
+    steps,
     () => {
       console.log('finish');
     }
